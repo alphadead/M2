@@ -2,14 +2,14 @@ const chatForm = document.getElementById('chat-form');
 const chatMessages = document.querySelector('.chat-messages');
 const roomName = document.getElementById('room-name');
 const userList = document.getElementById('users');
-const io = require('socket.io');
+
 
 //get username and room from url
 const {username, room} = Qs.parse(location.search, {
     ignoreQueryPrefix: true,
 });
 
-const socket = io('https://alphadead.github.io/m2/');
+const socket = io('http://localhost:3000');
 
 //join chatroom
 socket.emit('joinRoom', { username, room});
