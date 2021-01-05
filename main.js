@@ -8,7 +8,7 @@ const {username, room} = Qs.parse(location.search, {
     ignoreQueryPrefix: true,
 });
 
-const socket = io();
+const socket = io('https://alphadead.github.io/m2/');
 
 //join chatroom
 socket.emit('joinRoom', { username, room});
