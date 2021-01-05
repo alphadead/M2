@@ -3,13 +3,12 @@ const chatMessages = document.querySelector('.chat-messages');
 const roomName = document.getElementById('room-name');
 const userList = document.getElementById('users');
 
-
 //get username and room from url
 const {username, room} = Qs.parse(location.search, {
     ignoreQueryPrefix: true,
 });
 
-const socket = io('http://localhost:3000');
+const socket = io();
 
 //join chatroom
 socket.emit('joinRoom', { username, room});
